@@ -11,3 +11,18 @@
     // check that your links work!
 
 import React from 'react';
+
+class Header extends React.Component {
+  render() {
+    return (
+      <ul className="Header">
+        <li className="GDInsta">Catstagram</li>
+        <li className="GDInsta">Home</li>
+        <li className="GDInsta">About</li>
+        <li className="GDInsta">Profile</li>
+      </ul>
+    )
+  }
+}
+
+export default Header;

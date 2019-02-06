@@ -16,4 +16,51 @@
     // and when the user submits, call that function with the user submitted url.
 
 import React from 'react';
+import ImageUploaderForm from '../components/ImageUploaderForm.jsx'
+import FeedList from '../components/FeedList.jsx'
 import data from '../../data.json';
+
+class HomePage extends React.Component {
+
+  constructor(props){
+    super(props);
+    this.state = {
+      photos: data.photos
+    }
+  }
+
+  handleAddPhoto = (url) => {
+    const userPhoto = {
+      url: url,
+      likes: 0
+    }
+    this.setState((prevState) => {
+      return {
+        photos: prevState.photos.concat([userPhoto])
+      }
+    })
+  };
+
+  render() {
+    return (
+      <div className="HomePage">
+        <ImageUploaderForm submitCallback={this.handleAddPhoto}/>
+        <FeedList photos={this.state.photos} />
+      </div>
+    )
+  }
+}
+
+
+export default HomePage;
+
+/*
+this.setState((prevState) => {
+    return {
+
+    };
+  });
+}
+
+userPhoto={this.url}
+*/
