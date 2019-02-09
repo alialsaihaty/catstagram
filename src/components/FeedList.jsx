@@ -14,12 +14,32 @@ import FeedItem from './FeedItem.jsx';
 
 class FeedList extends React.Component {
   render() {
-    const {photos} = this.props;
+    const {
+      cats,
+      dogs,
+      birds,
+      animal
+    } = this.props;
+    let feedItem;
+    if (animal === 'cats') {
+      feedItem =
+      cats.map(({id, title, url, likes, userLiked}) => (
+        <FeedItem key={id} title={title} url={url} like={likes} user-linked={userLiked}/>
+      ))
+    } else if (animal === 'dogs') {
+      feedItem =
+      dogs.map(({id, title, url, likes, userLiked}) => (
+        <FeedItem key={id} title={title} url={url} like={likes} user-linked={userLiked}/>
+      ))
+    } else if (animal === 'birds') {
+      feedItem =
+      birds.map(({id, title, url, likes, userLiked}) => (
+        <FeedItem key={id} title={title} url={url} like={likes} user-linked={userLiked}/>
+      ))
+    }
     return (
       <div className="FeedList">
-        {photos.map(({id, title, url, likes, userLiked}) => (
-          <FeedItem key={id} title={title} url={url} like={likes} user-linked={userLiked}/>
-        ))}
+        {feedItem}
       </div>
     )
   }
@@ -29,6 +49,7 @@ class FeedList extends React.Component {
 export default FeedList;
 
 /*
+{console.log(animal)}
 
 {console.log(this.props.photos.map(entry => entry))}
 {console.log(this.props.photos.map(entry => entry.id))}

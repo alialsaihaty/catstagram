@@ -1,5 +1,5 @@
 {
-	"photos": [
+	"cats": [
 		{
 			"id": 1,
 			"title": "Too cool for school",
@@ -68,6 +68,38 @@
 			"title": "I'm the king",
 			"url": "http://i.imgur.com/72zRVtC.gif",
 			"likes": 89,
+			"userLiked": false
+		}
+	],
+	"dogs": [
+		{
+			"id": 11,
+			"title": "outside",
+			"url": "https://i.imgur.com/e14ZDTyb.jpg",
+			"likes": 605,
+			"userLiked": false
+		},
+		{
+			"id": 12,
+			"title": "on the street",
+			"url": "https://i.imgur.com/JXetxQh.jpg",
+			"likes": 2285,
+			"userLiked": false
+		}
+	],
+	"birds": [
+		{
+			"id": 13,
+			"title": "at home",
+			"url": "https://i.imgur.com/QVmYIRu.jpg",
+			"likes": 555,
+			"userLiked": false
+		},
+		{
+			"id": 14,
+			"title": "on the tree",
+			"url": "https://i.imgur.com/5D9yf1G.jpg",
+			"likes": 1845,
 			"userLiked": false
 		}
 	]

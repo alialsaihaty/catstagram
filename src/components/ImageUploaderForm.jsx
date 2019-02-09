@@ -50,7 +50,6 @@
 
     handleSubmit = (e) => {
       e.preventDefault();
-      console.log(this.state);
       this.props.submitCallback(this.state.url)
     }
 
@@ -74,6 +73,7 @@
 
 
 /*
+// console.log(this.state);
 
 console.log(e.target.value);
 */

@@ -18,6 +18,7 @@
 import React from 'react';
 import ImageUploaderForm from '../components/ImageUploaderForm.jsx'
 import FeedList from '../components/FeedList.jsx'
+import DropDown from '../components/DropDown.jsx'
 import data from '../../data.json';
 
 class HomePage extends React.Component {
@@ -25,7 +26,10 @@ class HomePage extends React.Component {
   constructor(props){
     super(props);
     this.state = {
-      photos: data.photos
+      cats: data.cats,
+      dogs: data.dogs,
+      birds: data.birds,
+      animal: undefined
     }
   }
 
@@ -36,16 +40,23 @@ class HomePage extends React.Component {
     }
     this.setState((prevState) => {
       return {
-        photos: prevState.photos.concat([userPhoto])
+        cats: prevState.cats.concat([userPhoto])
       }
     })
   };
 
+  handleDropDown = (animalType) => {
+    this.setState(
+      { animal: animalType }
+    );
+  }
+
   render() {
     return (
       <div className="HomePage">
+        <DropDown submitCallback={this.handleDropDown}/>
         <ImageUploaderForm submitCallback={this.handleAddPhoto}/>
-        <FeedList photos={this.state.photos} />
+        <FeedList animal={this.state.animal} cats={this.state.cats} dogs={this.state.dogs} birds={this.state.birds}/>
       </div>
     )
   }
